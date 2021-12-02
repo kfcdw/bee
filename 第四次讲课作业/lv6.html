@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const obj = {
+        name: "小余",
+        age: 20,
+        personInfo: {
+            personName: "xxx",
+            personAge: 100,
+            hobbies: ["吃饭", "逛街", "看电影"],
+            otherInfo: []
+        }
+    }
+    const {
+        name,
+        age: xiaoyuAge,
+        personInfo: {
+            personName,
+            personAge: xxxAge,
+            hobbies: [hobby1]
+        }
+    } = obj
+    const [otherInfo = "其他消息"] = obj.personInfo.otherInfo
+
+
+    console.log(name);//小余
+    //使用解构赋值的别名
+    console.log(xiaoyuAge);//20
+    //多层的解构赋值取
+    console.log(personName);//xxx
+    //多层解构赋值取别名
+    console.log(xxxAge);//100
+    //多层解构赋值(包含数组)
+    console.log(hobby1);//吃饭
+    //解构赋值赋初始值尽管otherInfo没有但是我可以赋初始值给他,这个初始值为"其他信息"
+    console.log(otherInfo);//其他信息
+
+</script>
+
+</html>

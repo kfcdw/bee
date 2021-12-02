@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let obj = {
+        攻击: 10,
+        防御: 5,
+        生命: 20,
+        个人信息: {
+            性别: "男",
+            年龄: 18,
+        }
+    }
+    var clone = {};
+    function copy(obj) {
+
+        for (var i in obj) {
+            if (typeof (obj[i]) == "object")
+                clone[i] = copy(obj[i]);
+            else
+                clone[i] = obj[i];
+        }
+        console.log(clone)
+    }
+    copy(obj)
+</script>
+
+</html>

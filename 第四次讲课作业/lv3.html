@@ -1,0 +1,28 @@
+<script>
+    var normal = [-5, -2, -9, 50, 66, 80, -90, 16];
+    // sort默认第一项第一个字符来排序,
+    // a-b实现升序;b-a实现降序
+
+    function mulAndInOrder() {
+        mul = normal.map(function (a) {
+            return a ** 2
+        })
+        // console.log(mul)
+        // inOrder = mul.sort(function (a, b) { return a - b })
+        // console.log(inOrder)
+        function inOrder(a) {
+            var i = j = t = 0;
+            for (i = 0; i < a.length; i++) {
+                for (j = 0; j < a.length; j++) {
+                    if (a[i] < a[j]) {
+                        [a[i], a[j]] = [a[j], a[i]]
+                    }
+                }
+            }
+            return a;
+        }
+        inOrder(mul)
+        console.log(inOrder(mul))
+    }
+    mulAndInOrder(normal)
+</script>

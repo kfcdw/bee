@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const obj = {
+        name: "小余",
+        age: 20,
+        gender: "male",
+        personInfo: {
+            name: "xxx",
+            age: 100,
+        }
+    }
+    var a = {}
+    console.log(typeof a)
+    //下来看看Object上面的方法,这是一个浅克隆
+    // const copyObj = Object.assign({}, obj)
+    // console.log(obj === copyObj)//false
+    // console.log(obj)
+    // console.log(copyObj)
+    //自己实现一个copy方法
+    // 方法一
+    // function copy() {
+    //     var a = obj;
+    //     console.log(a)
+    // }
+    // console.log(obj)
+    // obj.name = 1234;
+    // copy(obj)
+    // 方法二
+    function copy() {
+        for (var i in obj) {
+            a[i] = obj[i]
+        }
+        console.log(a)
+    }
+
+    console.log(obj)
+    obj.name = 1234;
+    console.log(obj)
+    copy(obj)
+
+</script>
+
+</html>
